@@ -6,15 +6,10 @@ axios.defaults.headers.common['x-api-key'] =
   'live_56ixb2oNAp24dYnn50l5L99fGWscDPLIKHgSmKgI6UfKdYTvLwwrW3Nj8XYR7SEY';
 
 function fetchBreeds() {
-  return axios
-    .get(`${BASE_URL}/breeds`)
-    .then(response => {
-      // возвращаем данные из response.data( Axios автоматически распознает JSON-данные)
-      return response.data;
-    })
-    .catch(error => {
-      throw new Error('Ошибка запроса:', error.message);
-    });
+  return axios.get(`${BASE_URL}/breeds`).then(response => {
+    // возвращаем данные из response.data( Axios автоматически распознает JSON-данные)
+    return response.data;
+  });
 }
 
 function fetchCatByBreed(breedId) {
@@ -23,9 +18,6 @@ function fetchCatByBreed(breedId) {
     .then(response => {
       // возвращаем данные из response.data( Axios автоматически распознает JSON-данные)
       return response.data;
-    })
-    .catch(error => {
-      throw new Error('Ошибка запроса:', error.message);
     });
 }
 
